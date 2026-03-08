@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="LogicCat-bench" />
+    <meta name="author" content="" />
+    <link rel="icon" href="./logo/cat_logo.png" type="image/x-icon" />
+    <title>LogicCat-bench</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./style/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom fonts for this template -->
+    <link
+      href="./style/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="./style/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="./style/clean-blog.min.css" rel="stylesheet" />
+    <link href="./style/bird.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header class="masthead" id="header-color">
+      <div style="background-color: #485159; text-align: left">
+        <img
+          style="margin-top: 5px; padding: 15px"
+          height="70px"
+          src="./logo/zzu.png"
+        />
+        <!-- <img
+          style="margin-top: 5px; padding: 15px"
+          height="70px"
+          src="./logo/logo_jsj.png"
+        /> -->
+        
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-md-12 mx-auto">
+            <div class="row site-heading flex-box">
+              <div class="col-lg-3">
+                <img id="logo-img" src="logo/cat_main.png" alt="logo" "/>
+              </div>
+              <div class="col-lg-9">
+                <div class="align-middle">
+                  <h1 id="bird-title">LogicCat</h1>
+                  <span class="subheading" id="caption">A Chain-of-Thought Multi-Domain Benchmark for Text-to-SQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container" id="main">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="list-group">
+            <div class="list-group-item" id="introduction">
+              <!-- <div style="display: grid; grid-template-columns: auto auto; align-items: center;"> -->
+              <h4>About LogicCat</h4>
+              <!-- </div> -->
+              <p>
+                <!-- BIRD (<b>BI</b>g Bench for La<b>R</b>ge-scale <b>D</b>atabase
+                Grounded Text-to-SQL Evaluation) represents a pioneering,
+                cross-domain dataset that examines the impact of extensive
+                database contents on text-to-SQL parsing.
+                <!-- The dataset includes three extra problems that especially resonates with real-world scenarios:
+              <b>1)</b> the necessity to incorporate external knowledge into parsers; <b>2)</b> the need for parsers to
+              reason over 'dirty' values;
+              and <b>3)</b> the requirment to consider efficiency while executing SQLs.  -->
+                <!-- BIRD contains over <b>12,751</b> unique question-SQL pairs,
+                <b>95</b> big databases with a total size of <b>33.4 GB</b>. It
+                also covers more than <b>37</b> professional domains, such as
+                blockchain, hockey, healthcare and education, etc. -->
+                LogicCat is a benchmark for evaluating the complex reasoning capabilities of large language models in Text-to-SQL tasks. 
+                It covers 45 databases, 4,038 questions, and 12,114 reasoning annotations, 
+                with a focus on SQL generation involving physical, mathematical, commonsense, and hypothetical reasoning.
+              </p>
+              <div id="button-group">
+                <div class="button-row">
+                  <a
+                    href="https://arxiv.org/abs/2505.18744"
+                    target="_blank"
+                  >
+                  <button type="button" class="btn btn-g">
+                    🔥 LogicCat Paper 
+                  </button>
+                </div>
+                <!-- <div class="button-row">
+                  <a
+                    href="https://arxiv.org/pdf/2305.03111.pdf"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-a">Paper</button>
+                  </a>
+                </div> -->
+                <div class="button-row">
+                  <a
+                    href="https://github.com/Ffunkytao/LogicCat"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-a">Code</button>
+                  </a>
+                </div>
+                <div class="button-row">
+                  <a
+                    href="https://github.com/Ffunkytao/LogicCat/tree/main/miniset"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-a">
+                      Mini-Dev (500)
+                    </button>
+                  </a>
+                </div>
+
+                <div class="button-row">
+                  <a
+                    href="https://docs.qq.com/doc/DVW9ubWt5amxZT3Nj"
+                    target="_blank"
+                  >
+                    <button type="button" class="btn btn-d">
+                      Evaluation Set
+                    </button>
+                  </a>
+                </div>
+
+                <div class="button-row" id="button-row-b">
+                  <div class="btn-round">
+                    <a
+                      href="https://github.com/Ffunkytao/LogicCat/tree/main/MySQL"
+                      target="_blank"
+                    >
+                      <button type="button" class="btn btn-b">Train Dev Set</button>
+                    </a>
+                  </div>
+                  <div class="btn-round">
+                    <a
+                      href="https://github.com/Ffunkytao/LogicCat/tree/main/MySQL"
+                      target="_blank"
+                    >
+                      <button type="button" class="btn btn-b">
+                        🔥 Test Set
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <style>
+              .scroll-container {
+                position: relative;
+                width: 100%;
+                max-height: 300px;
+                overflow-y: scroll;
+              }
+
+              /* Hide the scrollbar by default */
+              .scroll-container::-webkit-scrollbar {
+                width: 10px;
+                background: transparent;
+              }
+
+              /* Set the scrollbar thumb color */
+              .scroll-container::-webkit-scrollbar-thumb {
+                background-color: #ffffff;
+                border-radius: 5px;
+              }
+
+              /* Show the scrollbar when the mouse is hovering over the scroll container */
+              .scroll-container:hover::-webkit-scrollbar {
+                width: 10px;
+              }
+
+              .scroll-container:hover::-webkit-scrollbar-thumb:hover {
+                background-color: #555;
+              }
+            </style>
+            <script>
+              // A new function for BIRD-CRITIC
+              function showBirdCriticMessage() {
+                alert(
+                  "BIRD-CRITIC is the first SQL debugging benchmark investigating whether LLMs can effectively resolve user issues in real-world database applications. It contains 600 tasks in dev and 200 OOD hidden tests. The full challenges in BIRD-SQL 2025 are under collaboration with Google Cloud.\n\n" +
+                  "Key Highlights:\n" +
+                  "• 5 popular SQL dialects: MySQL, PostgreSQL, SQLServer, Oracle, and one OOD dialect\n" +
+                  "• Challenging tasks that go beyond SELECT (e.g., CREATE TRIGGER, UPDATE constraints, SQL Optimization)\n" +
+                  "• Each task is derived from real-world user cases and reproduced within the BIRD environment, verified by human experts\n" +
+                  "• Multi-thread sandbox enabling fast and robust evaluation\n" +
+                  "• Professionally curated test cases for each task.\n" +
+                  "We will release a PREVIEW set in this month and full set next month. Email us if you have some suggestions or new contents that you want to see!\n\n" +
+                  "Other exciting Sibling benchmarks you may expect in BIRD-SQL 2025:\n" +
+                  "• BIRD-CRITIC 1.5 (Repo-level Code Debugging for Real-World DB Applications)\n" +
+                  "• BIRD-Interact\n" +
+                  "• BIRD-Vision\n" +
+                  "• BIRD-Pro & BIRD-Pro Max: The second generation of BIRD-SQL covering comprehensive DB operations / BI querying with new open-source enterprise-level databases with thousands of columns, advanced constrains and TB-level data."
+                );
+              }
+            </script>
+            <script>
+                function showLiveSQLBenchMessage() {
+                  alert(
+                    "Inspired by great LiveCodeBench, we're developing LiveSQLBench to provide a robust and contamination-free evaluation for text-to-SQL models on challenging, comprehensive benchmark, which will be updated periodically.\n\n" +
+                    "LiveSQLBench (BIRD-SQL Pro v0.5) will feature diverse real-world user queries, including Business Intelligence (BI), CRUD operations, etc.\n\n" +
+                    "Each release will include 50 new, fully open-source DBs curated by the BIRD team through expert collaboration and continuous improvement. It will cover a wide range of database sizes, from end-user level (around 39 columns) to industrial level (1340+ columns), catering to various query types.\n\n" +
+                    "Look for LiveSQLBench to launch in March! And more exciting text-to-SQL evaluations on the way~ :) "
+                  );
+                }
+            </script>
+
+
+            <div class="list-group-item" id="news">
+              <h4>News</h4>
+
+              <div class="scroll-container">
+                <div
+                  class="card card-outline-secondary mb-4"
+                  style="text-align: left"
+                >
+                  <div class="card-body" style="background-color: #f1f6f9">
+
+                    <ul style="padding-left: 0">
+
+                    <li style="list-style-type: none">
+                        <span style="background-color: #634687; color: white; padding: 2px 4px; border-radius: 5px;">
+                          <strong style="color: #ffe7ce">Dec. 8, 2025:  </strong> </span> Our paper <strong><a href="https://arxiv.org/abs/2505.18744" target="_blank">LogicCat</a></strong> has been accepted to <strong>AAAI 2026 (Poster)</strong>!  
+                        
+
+                  <li style="list-style-type: none">
+                  <span style="background-color: #B03052; color: white; padding: 2px 4px; border-radius: 5px;">
+                    <strong style="color: #ffe7ce">Oct. 1, 2025:  </strong> </span>
+                  <strong><a href="https://github.com/Ffunkytao/LogicCat" target="_blank">LogicCat Benchmark</a></strong> is released!
+                  A Chain-of-Thought multi-domain benchmark for Text-to-SQL featuring 45 databases and 4,038 questions,
+                  with 12,114 fine-grained reasoning annotations to support faithful step-by-step evaluation,
+                  focusing on SQL generation that requires physical, mathematical, commonsense, and hypothetical reasoning.
+                  <!-- See more at <strong><a href="https://livesqlbench.ai" target="_blank">livesqlbench.ai</a></strong>. -->
+
+                  
+                  <li style="list-style-type: none">
+                    <span style="background-color: #634687; color: white; padding: 2px 4px; border-radius: 5px;">
+                      <strong style="color: #ffe7ce">Feb. 5, 2026:  </strong> </span> Our paper <strong><a href="https://arxiv.org/abs/2602.05385" target="_blank">IESR: Efficient MCTS-Based Modular Reasoning for Text-to-SQL with Large Language Models</a></strong> has released. 
+
+              
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item" id="illustration">
+              <h4>Surprise from LogicCat</h4>
+              <p>
+                <b>1. Diverse Resources and Reasoning</b> LogicCat is built on diverse 
+                text-to-SQL environments covering heterogeneous resources, table schemas, 
+                and reasoning types. To generate correct SQL, models must ground 
+                natural language questions in structured databases while handling 
+                physical, mathematical, commonsense, and hypothetical reasoning.
+              </p>
+              <img
+                src="./img/task.png"
+                class="column-img"
+                id="dirty-img-1"
+                style="margin: 0 auto"
+              />
+              <p>
+                <b>2. Broad Cross-Domain Coverage:</b> LogicCat spans a wide range of application 
+                domains, including consumer IoT, transportation, industry, infrastructure, 
+                services, research, and agriculture. This broad database distribution supports 
+                a more comprehensive evaluation of model generalization in complex text-to-SQL tasks.
+              </p>
+              <img
+                src="./img/db_id_distribution.png"
+                class="column-img"
+                id="dirty-img-2"
+                style="margin: 0 auto"
+              />
+              <p>
+                <b>3. Physical Knowledge Reasoning:</b> LogicCat evaluates whether models can
+                translate physical device properties and operational constraints into
+                executable SQL, such as identifying low-battery computers and computing
+                aggregate statistics over the filtered results.
+              </p>
+              <img
+                src="./img/category1.png"
+                class="column-img"
+                id="kg-img"
+                style="margin: 0 auto"
+              />
+              <p>
+                <b>4. Mathematical Logic Reasoning:</b>  LogicCat tests a model’s ability to
+                perform precise numerical and temporal reasoning in SQL, including date-based
+                age calculation, conditional logic, and special-case handling.
+              </p>
+              <img
+                src="./img/category2.png"
+                class="column-img"
+                id="eff-img"
+                style="margin: 0 auto"
+              />
+
+              <p>
+                <b>5. Common Sense Reasoning:</b> LogicCat requires models to incorporate
+                everyday commonsense knowledge into query generation, such as estimating air
+                conditioner cooling time from temperature change, device capacity, and
+                operating mode.
+              </p>
+              <img
+                src="./img/category3.png"
+                class="column-img"
+                id="kg-img"
+                style="margin: 0 auto"
+              />
+              <p>
+                <b>6. Ideal Hypothetical Reasoning:</b> LogicCat also evaluates hypothetical
+                reasoning, where models must derive SQL under idealized or counterfactual
+                assumptions, such as estimating theoretical energy consumption in extreme
+                conditions.
+              </p>
+              <img
+                src="./img/category4.png"
+                class="column-img"
+                id="eff-img"
+                style="margin: 0 auto"
+              />
+            </div>
+            <!-- <div class="list-group-item">
+            <h4>Download Dataset</h4>
+            <p>We are cleaning and checking our databases, SQLs, Question, and Knowledge carefully. Will come up soon!</p>
+            <p class="text-center">
+              <a href="https://bird-bench.github.io/"><button type="button" class="btn btn-success", id="code">BIRD Code Nest</button></a>
+            </p>
+          </div> -->
+            <div class="list-group-item">
+              <h4>Submission Test Set</h4>
+              <p>
+                Please follow the Submission Guideline (below) and contact
+                <code>funktttao@163.com</code> for test evaluation.
+                Ususally, we will return your results in 10 days!
+              </p>
+              <style>
+                .btn-a {
+                  border-radius: 25px; /* Adjust this value to change the roundness of the button */
+                }
+                .btn-a:hover {
+                  background-color: #22a699; /* Change the background color when the cursor is over the button */
+                }
+              </style>
+              <div class="button-row">
+                <a
+                  href="https://docs.qq.com/doc/DVXNHQmpmaXVVbU5r"
+                  target="_blank"
+                >
+                  <button type="button" class="btn btn-a">
+                    Submission Guidelines
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="list-group-item">
+              <h4>Thank you for Bird and Spider 2.0</h4>
+              <p>
+                We thank BIRD and Spider 2.0 for the inspiration and reference they provided for the design of our webpage.
+              </p>
+              <!-- <form onsubmit="return submitForm();">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email address"
+                  required
+                />
+                <button type="submit">Subscribe</button>
+              </form>
+              <p id="message"></p> -->
+            </div>
+
+            <head>
+              <meta charset="utf-8" />
+              <title>Email Subscription</title>
+              <script>
+                function submitForm() {
+                  var email = document.getElementById("email").value;
+                  var url =
+                    "https://script.google.com/macros/s/AKfycbynv6Ibnl9gJosprkRmXhbKtllZX8dqrbj_xQkcbZ_NgEDBxwyjz1xyvIvnm_4yPh3ZPA/exec";
+                  var data = "email=" + encodeURIComponent(email);
+
+                  fetch(url, {
+                    method: "POST",
+                    body: data,
+                    headers: {
+                      "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                  })
+                    .then((response) => response.text())
+                    .then((text) => {
+                      document.getElementById("message").innerHTML =
+                        "<i>Subscribe Successfully! Thanks for your attention!</i>";
+                    })
+                    .catch((error) => {
+                      console.error("Error:", error);
+                    });
+
+                  return false;
+                }
+              </script>
+            </head>
+            <div class="list-group-item">
+              <h4>Citation</h4>
+              <!-- <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fbird-critic.github.io%2F"><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fbird-critic.github.io%2F&label=Views&labelColor=%23155e95&countColor=%23e9ecef&style=flat" /></a> -->
+              <!-- <pre id="citation">
+@misc{li2023llm,
+  title={Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs},
+  author={Jinyang Li and Binyuan Hui and Ge Qu and Binhua Li and Jiaxi Yang and Bowen Li and Bailin Wang and Bowen Qin and Rongyu Cao and Ruiying Geng and Nan Huo and Chenhao Ma and Kevin C. C. Chang and Fei Huang and Reynold Cheng and Yongbin Li},
+  year={2023},
+  eprint={2305.03111},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL}
+}</pre> -->
+              <pre id="citation">
+@misc{liu2025logiccatchainofthoughttexttosqlbenchmark,
+title={LogicCat: A Chain-of-Thought Text-to-SQL Benchmark for Complex Reasoning}, 
+author={Tao Liu and Xutao Mao and Hongying Zan and Dixuan Zhang and Yifan Li and Haixin Liu and Lulu Kong and Jiaming Hou and Rui Li and YunLong Li and aoze zheng and Zhiqiang Zhang and Luo Zhewei and Kunli Zhang and Min Peng},
+year={2025},
+eprint={2505.18744},
+archivePrefix={arXiv},
+primaryClass={cs.CL},
+url={https://arxiv.org/abs/2505.18744}, 
+}</pre
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="btn-group mb-3 w-100">
+            <button id="overall-leaderboard-btn" class="btn btn-f">Overall Leaderboard</button>
+            <button id="single-model-leaderboard-btn" class="btn btn-f">Single-Model Leaderboard</button>
+          </div>
+
+          <div id="overall-leaderboard">
+            <div class="card card-outline-secondary">
+              <div class="card-header">Leaderboard - Execution Accuracy (EX)</div>
+              <div class="table-wrapper">
+                <table class="table" id="ex-table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col" rowspan="1"></th>
+                      <th
+                        scope="col"
+                        rowspan="1"
+                        class="align-middle text-center"
+                      >
+                        Model
+                      </th>
+                      <th
+                        scope="col"
+                        rowspan="1"
+                        class="align-middle text-center"
+                      >
+                        Code
+                      </th>
+                      <th
+                        scope="col"
+                        rowspan="1"
+                        class="align-middle text-center"
+                      >
+                        Size
+                      </th>
+                      <th
+                        scope="col"
+                        rowspan="1"
+                        class="align-middle text-center"
+                      >
+                        Reasoning
+                      </th>
+                      <th scope="col" colspan="1" class="text-center">Dev (%)</th>
+                      <th scope="col" colspan="1" class="text-center">
+                        Test (%)
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table-success">
+                      <td scope="row" class="align-middle text-center"><br /></td>
+                      <td class="align-middle text-center">
+                        Human Performance<br />
+                        <span class="affiliation"
+                          >Data Engineers + DB Students</span
+                        ><br /><a href="" class="paperlink"></a>
+                      </td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center">✔️</td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center"><b>95.05</b></td>
+                    </tr>
+
+                    <!-- <tr class="table-success">
+                    <td scope="row" class="align-middle text-center"><br>
+                    </td>
+                    <td class="align-middle text-center">Human Performance<br>
+                      <span class="affiliation">Data Engineers + DB Students</span><br><a href="" class="paperlink"></a>
+                    </td>
+                    <td class="align-middle text-center"></td>
+                    <td class="align-middle text-center">✔️</td>
+                    <td class="align-middle text-center"></td>
+                    <td class="align-middle text-center"></td>
+                    <td class="align-middle text-center"><b>72.37</b></td>
+                  </tr> -->
+
+                  <tr>
+                    <td scope="row" class="align-middle text-center counter-cell">
+                      <span class="badge badge-secondary">Mar 7, 2026</span>
+                    </td>
+                    <td class="align-middle text-center">IESR + Xiyan-Qwencoder<br>
+                      <span class="affiliation">anonymous</span>
+                      <br><a href="https://arxiv.org/abs/2602.05385" class="paperlink">[Tao Liu et al. '26]</a>
+                    </td>
+                    <td class="align-middle text-center"><a href="https://github.com/Ffunkytao/IESR-SLM">[link]</a></td>
+                    <td class="align-middle text-center">7B</td>
+                    <td class="align-middle text-center">✔️</td>
+                    <td class="align-middle text-center">23.78</td>
+                    <td class="align-middle text-center"><b>23.17</b></td>
+                  </tr>
+
+                  <!-- <tr>
+                    <td scope="row" class="align-middle text-center counter-cell">
+                      <span class="badge badge-secondary">Sep 25, 2025</span>
+                    </td>
+                    <td class="align-middle text-center">Agentar-Scale-SQL<br>
+                      <span class="affiliation">Ant Group</span>
+                      <br><a href="https://arxiv.org/abs/2509.24403" class="paperlink">[Pengfei Wang et al. '25]</a>
+                    </td>
+                    <td class="align-middle text-center"><a href="https://github.com/antgroup/Agentar-Scale-SQL">[link]</a></td>
+                    <td class="align-middle text-center">UNK</td>
+                    <td class="align-middle text-center">✔️</td>
+                    <td class="align-middle text-center">74.90</td>
+                    <td class="align-middle text-center">81.67</td>
+                  </tr>
+
+                  <tr>
+                    <td scope="row" class="align-middle text-center counter-cell">
+                      <span class="badge badge-secondary">July 14, 2025</span>
+                    </td>
+                    <td class="align-middle text-center">LongData-SQL<br>
+                      <span class="affiliation">LongShine AI Research</span><br>
+                    </td>
+                    <td class="align-middle text-center"></td>
+                    <td class="align-middle text-center">UNK</td>
+                    <td class="align-middle text-center">✔️</td>
+                    <td class="align-middle text-center">74.32</td>
+                    <td class="align-middle text-center">77.53</td>
+                  </tr> -->
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+                   
+
+          </div>
+
+          <div id="single-model-leaderboard" style="display: none;">
+            <div class="list-group-item" id="illustration">
+              <h3>Single Trained Model Track </h3>
+              <p>
+                This specific track was proposed aiming at advancing training techniques for text-to-SQL and fair comparison of <strong>single</strong> model capabilities.
+              </p>
+            </div>
+            <div class="card card-outline-secondary">
+              <div class="card-header">Leaderboard - Execution Accuracy (EX)</div>
+              <div class="table-wrapper">
+                <table class="table" id="ex-table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col" rowspan="1"></th>
+                      <th
+                        scope="col"
+                        rowspan="1"
+                        class="align-middle text-center"
+                      >
+                        Model
+                      </th>
+                      <th
+                        scope="col"
+                        rowspan="1"
+                        class="align-middle text-center"
+                      >
+                        Code
+                      </th>
+                      <th
+                        scope="col"
+                        rowspan="1"
+                        class="align-middle text-center"
+                      >
+                        Size
+                      </th>
+                      <th
+                        scope="col"
+                        rowspan="1"
+                        class="align-middle text-center"
+                      >
+                      Reasoning
+                      </th>
+                      <th scope="col" colspan="1" class="text-center">Dev (%)</th>
+                      <th scope="col" colspan="1" class="text-center">
+                        Test (%)
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="table-success">
+                      <td scope="row" class="align-middle text-center"><br /></td>
+                      <td class="align-middle text-center">
+                        Human Performance<br />
+                        <span class="affiliation"
+                          >Data Engineers + DB Students</span
+                        ><br /><a href="" class="paperlink"></a>
+                      </td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center"><b>95.05</b></td>
+                    </tr>
+
+
+                    <tr>
+                      <td scope="row" class="align-middle text-center counter-cell">
+                        <span class="badge badge-secondary">Mar 7, 2026</span>
+                      </td>
+                      <td class="align-middle text-center">O4-mini</td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center">✔️</td>
+                      <td class="align-middle text-center">13.99</td>
+                      <td class="align-middle text-center"><b>14.96</b></td>
+                    </tr>
+
+                    <tr>
+                      <td scope="row" class="align-middle text-center counter-cell">
+                        <span class="badge badge-secondary">Mar 7, 2026</span>
+                      </td>
+                      <td class="align-middle text-center">Claude-4.0-Sonnet</td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center">✔️</td>
+                      <td class="align-middle text-center">11.36</td>
+                      <td class="align-middle text-center"><b>11.51</b></td>
+                    </tr>
+
+                    <tr>
+                      <td scope="row" class="align-middle text-center counter-cell">
+                        <span class="badge badge-secondary">Mar 7, 2026</span>
+                      </td>
+                      <td class="align-middle text-center">Deepseek-R1</td>
+                      <td class="align-middle text-center"></td>
+                      <td class="align-middle text-center">671B</td>
+                      <td class="align-middle text-center">✔️</td>
+                      <td class="align-middle text-center">8.73</td>
+                      <td class="align-middle text-center"><b>9.98</b></td>
+                    </tr>
+
+
+                    
+
+
+
+                    <!-- <tr>
+                      <td scope="row" class="align-middle text-center counter-cell">
+                        <span class="badge badge-secondary">July 08, 2025</span>
+                      </td>
+                      <td class="align-middle text-center">Databricks RLVR 32B<br>
+                        <span class="affiliation">Databricks Mosaic Research</span><br><a href="https://www.databricks.com/research" class="paperlink">Databricks Mosaic Research</a>
+                      </td>
+                      <td class="align-middle text-center"><a></a></td>
+                      <td class="align-middle text-center">32B</td>
+                      <td class="align-middle text-center"
+    style="font-size: 0.95em; font-style: italic;">✔️
+</td>
+                      <td class="align-middle text-center">-</td>
+                      <td class="align-middle text-center">75.68</td>
+                    </tr>
+
+                    <tr>
+                      <td scope="row" class="align-middle text-center counter-cell">
+                        <span class="badge badge-secondary">July 08, 2025</span>
+                      </td>
+                      <td class="align-middle text-center">Databricks RLVR 32B<br>
+                        <span class="affiliation">Databricks Mosaic Research</span><br><a href="https://www.databricks.com/research" class="paperlink">Databricks Mosaic Research</a>
+                      </td>
+                      <td class="align-middle text-center"><a></a></td>
+                      <td class="align-middle text-center">32B</td>
+                      <td class="align-middle text-center"
+    style="font-size: 0.95em; font-style: italic;">✔️
+</td>
+                      <td class="align-middle text-center">-</td>
+                      <td class="align-middle text-center">75.68</td>
+                    </tr> -->
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Bootstrap core JavaScript -->
+      <script src="./script/jquery.min.js"></script>
+      <script src="./script/bootstrap.bundle.min.js"></script>
+
+      <!-- Custom scripts for this template -->
+      <script src="./script/clean-blog.min.js"></script>
+      <!-- Custom script for leaderboard type toggle -->
+      <script src="./script/leaderboard-toggle.min.js"></script>
+
+      <!-- Auto-tag recent submissions with "New Sub" badge in Test column -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var now = new Date();
+          var twoWeeksMs = 14 * 24 * 60 * 60 * 1000;
+
+          var rows = document.querySelectorAll("table.table tbody tr");
+
+          rows.forEach(function (row) {
+            var badge = row.querySelector(".counter-cell .badge.badge-secondary");
+            if (!badge) return;
+
+            var dateText = badge.textContent.trim();
+            var date = new Date(dateText);
+            if (isNaN(date.getTime())) return;
+
+            var diffMs = now.getTime() - date.getTime();
+            if (diffMs < 0 || diffMs > twoWeeksMs) return;
+
+            var cells = row.querySelectorAll("td");
+            var lastCell = cells[cells.length - 1];
+            if (!lastCell) return;
+
+            // Create the visible "New Sub" badge for Test column
+            var newSubBadge = document.createElement("span");
+            newSubBadge.className = "new-sub-badge";
+            newSubBadge.setAttribute("data-tooltip", "Submitted within the last 2 weeks");
+            newSubBadge.textContent = "New Sub";
+
+            // If there is a hidden new-dev-badge placeholder, replace it
+            var hiddenBadge = lastCell.querySelector('.new-dev-badge[style*="visibility"]');
+            if (hiddenBadge) {
+              hiddenBadge.parentNode.replaceChild(newSubBadge, hiddenBadge);
+            } else {
+              var br = document.createElement("br");
+              lastCell.insertBefore(br, lastCell.firstChild);
+              lastCell.insertBefore(newSubBadge, lastCell.firstChild);
+            }
+
+            // For tables with a Dev column, add a hidden badge to Dev for alignment
+            var table = row.closest("table");
+            if (!table) return;
+            var hasDevCol = false;
+            table.querySelectorAll("thead th").forEach(function (th) {
+              if (th.textContent.trim().indexOf("Dev") !== -1) hasDevCol = true;
+            });
+
+            if (hasDevCol && cells.length >= 2) {
+              var devCell = cells[cells.length - 2];
+              // Only add hidden placeholder if Dev cell doesn't already have a badge
+              if (!devCell.querySelector(".new-dev-badge, .new-sub-badge")) {
+                var hiddenSubBadge = document.createElement("span");
+                hiddenSubBadge.className = "new-sub-badge";
+                hiddenSubBadge.style.visibility = "hidden";
+                hiddenSubBadge.textContent = "New Sub";
+                var br2 = document.createElement("br");
+                devCell.insertBefore(br2, devCell.firstChild);
+                devCell.insertBefore(hiddenSubBadge, devCell.firstChild);
+              }
+            }
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>
